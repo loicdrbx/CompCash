@@ -22,11 +22,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <AuthUI />
         <p>
-<<<<<<< HEAD
-          Edit <code>src/App.js</code> and save to reload. kjd
-=======
           Check the <code>console</code> to monitor auth status.
->>>>>>> feature/auth
         </p>
       </header>
     </div >
