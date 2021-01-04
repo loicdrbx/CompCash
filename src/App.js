@@ -3,7 +3,7 @@ import logo from './logo.svg';
 
 import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import Navbar from './components/Navbar';
+import FNavbar from './components/FNavbar/FNavbar';
 
 import { db } from './firebase/index';
 import { auth } from './firebase/index';
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-      {/* <Navbar /> */}
+      <FNavbar />
       <Switch>
         <Route path="/" exact component={Home} />
       </Switch>

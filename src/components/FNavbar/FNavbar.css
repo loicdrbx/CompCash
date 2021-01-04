@@ -1,0 +1,26 @@
+.mynavbar {
+  width: 100vw;
+  overflow-x: hidden !important;
+}
+
+.navbar-toggler {
+  background-color: #7eb444;
+  border: none !important;
+}
+
+.navbar-brand-container {
+  font-weight: 600;
+}
+
+.navbar-link-text {
+  font-size: 16px;
+  margin-left: 2rem;
+  opacity: 1 !important;
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 576px) {
+  .navbar-link-text {
+    margin-left: 0rem !important;
+  }
+}

@@ -29,8 +29,7 @@ class FButtonPill extends Component {
           id={this.props.id}
           type={this.props.type}
         >
-          {this.props.value}
-          <span className="button-pill-arrow">&gt;</span>
+          {this.props.value} <span className="button-pill-arrow">&gt;</span>
         </button>
       </a>
     );
