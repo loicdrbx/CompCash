@@ -137,7 +137,7 @@ function Home() {
       </div>
       <div className="footer">
         <p className="text-center py-3 m-0">
-          CompCash | A CUSEC Hackacomm Product
+          CompCash | A CUSEC Hackacomm Product.
         </p>
       </div>
     </div>
