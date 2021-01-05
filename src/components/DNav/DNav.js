@@ -1,9 +1,6 @@
 import React from 'react';
-import AuthUI from '../../components/AuthUI';
-import { BiHomeAlt } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
-import * as BiIcons from 'react-icons/bi';
 import * as AiIcons from 'react-icons/ai';
 import * as RiIcons from 'react-icons/ri';
 import './DNav.css';
