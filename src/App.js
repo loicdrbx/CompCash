@@ -3,6 +3,7 @@ import logo from './logo.svg';
 
 import { Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
+import Dashboard from './pages/Dashboard/Dashboard';
 import FNavbar from './components/FNavbar/FNavbar';
 
 import { db } from './firebase/index';
@@ -40,6 +41,7 @@ function App() {
       <FNavbar />
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/dashboard" exact component={Dashboard} />
       </Switch>
     </>
   );

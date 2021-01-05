@@ -29,10 +29,10 @@ function FNavbar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className=""></Nav>
         <Nav className="ml-auto">
-          <LinkContainer to="#">
+          <LinkContainer to="/">
             <Nav.Link className="navbar-link-text">Home</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="#">
+          <LinkContainer to="/dashboard">
             <Nav.Link className="navbar-link-text">Dashboard</Nav.Link>
           </LinkContainer>
         </Nav>
