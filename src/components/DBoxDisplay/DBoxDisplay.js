@@ -11,10 +11,14 @@ function DBoxDisplay(props) {
         <h5 className="">{props.boxTitle}</h5>
         <div className="row justify-content-start align-items-center mt-3">
           <div className="col-1">
-            <FaIcons.FaBox className="p-0" size="1.5em" />
+            <FaIcons.FaBox
+              className="p-0"
+              size="1.5em"
+              style={{ color: '#2f2e41' }}
+            />
           </div>
           <ProgressBar
-            style={{ backgroundColor: 'black' }}
+            style={{ backgroundColor: '#2f2e41' }}
             className="col-11 p-0"
             now={props.prcnt}
           />
