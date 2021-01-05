@@ -15,7 +15,7 @@ function Dashboard() {
     <div className="container dashboard">
       <div className="row">
         <DNav />
-        <div className="col">
+        <div className="col ml-2">
           <Switch>
             <Route exact path={path + '/'} component={DHome} />
           </Switch>
