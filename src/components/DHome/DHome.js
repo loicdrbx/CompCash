@@ -45,6 +45,19 @@ function DHome() {
           </h1>
         </div>
       </div>
+
+      <div className="dash-comp container mt-4 pb-3">
+        <div className="ml-4 pt-4">
+          <h4>Community Impact</h4>
+          <p>
+            You're a legend! With your contributions, CompCash has donated a
+            total of
+          </p>
+          <h1>
+            <span className="green">127 </span> trees.
+          </h1>
+        </div>
+      </div>
     </>
   );
 }
