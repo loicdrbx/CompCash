@@ -1,0 +1,28 @@
+.dnav {
+  background-color: rgba(0, 0, 0, 0.07);
+  border-radius: 24px;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  list-style: none;
+  text-decoration: none !important;
+  padding-top: 2rem;
+}
+
+.nav-text {
+  font-weight: 600 !important;
+  font-size: 18px;
+}
+
+.nav-links {
+  opacity: 1;
+}
+
+.nav-links:hover {
+  opacity: 0.7;
+  text-decoration: none !important;
+  color: #2f2e41;
+}

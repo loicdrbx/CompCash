@@ -40,7 +40,7 @@ function App() {
     <>
       <FNavbar />
       <Switch>
-        <Route exact path="/" exact component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </>

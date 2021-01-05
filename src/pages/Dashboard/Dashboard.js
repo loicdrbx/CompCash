@@ -4,16 +4,24 @@ import './Dashboard.css';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import FButtonPill from '../../components/FButtonPill/FButtonPill';
 
-import DHome from '../../pages/DHome/DHome';
+import DNav from '../../components/DNav/DNav';
+import DHome from '../../components/DHome/DHome';
 
 function Dashboard() {
   let { path, url } = useRouteMatch();
 
   console.log(path);
   return (
-    <Switch>
-      <Route exact path={path + '/home'} component={DHome} />
-    </Switch>
+    <div className="container dashboard">
+      <div className="row">
+        <DNav />
+        <div className="col">
+          <Switch>
+            <Route exact path={path + '/'} component={DHome} />
+          </Switch>
+        </div>
+      </div>
+    </div>
   );
 }
 
