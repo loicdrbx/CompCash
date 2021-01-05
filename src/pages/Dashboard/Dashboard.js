@@ -8,9 +8,11 @@ import DHome from '../../pages/DHome/DHome';
 
 function Dashboard() {
   let { path, url } = useRouteMatch();
+
+  console.log(path);
   return (
     <Switch>
-      <Route path={path + '/'} exact component={DHome} />
+      <Route exact path={path + '/home'} component={DHome} />
     </Switch>
   );
 }
