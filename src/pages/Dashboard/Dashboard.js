@@ -6,6 +6,7 @@ import FButtonPill from '../../components/FButtonPill/FButtonPill';
 
 import DNav from '../../components/DNav/DNav';
 import DHome from '../../components/DHome/DHome';
+import DNewBox from '../../components/DNewBox/DNewBox';
 
 function Dashboard() {
   let { path, url } = useRouteMatch();
@@ -18,6 +19,7 @@ function Dashboard() {
         <div className="col ml-2">
           <Switch>
             <Route exact path={path + '/'} component={DHome} />
+            <Route exact path={path + '/boxes'} component={DNewBox} />
           </Switch>
         </div>
       </div>
