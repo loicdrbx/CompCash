@@ -7,7 +7,7 @@ import './DNav.css';
 
 function DNav() {
   return (
-    <div className="col-2 dnav h-100">
+    <div className="col-12 col-md-3 dnav h-100">
       <nav>
         <ul className="nav-menu-items">
           <li className="nav-item">
@@ -19,18 +19,26 @@ function DNav() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/dashboard/guide" className="dark nav-links">
-              <div className="row align-items-center">
-                <AiIcons.AiFillBook size="1.5em" />
-                <p className="m-0 ml-3 nav-text">Guide</p>
-              </div>
-            </Link>
-          </li>
-          <li className="nav-item">
             <Link to="/dashboard/boxes" className="dark nav-links">
               <div className="row align-items-center">
                 <FaIcons.FaBox size="1.5em" />
                 <p className="m-0 ml-3 nav-text">New Box</p>
+              </div>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/dashboard/tool" className="dark nav-links">
+              <div className="row align-items-center">
+                <FaIcons.FaCamera size="1.5em" />
+                <p className="m-0 ml-3 nav-text">Compost Tool</p>
+              </div>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/dashboard/guide" className="dark nav-links">
+              <div className="row align-items-center">
+                <AiIcons.AiFillBook size="1.5em" />
+                <p className="m-0 ml-3 nav-text">Guide</p>
               </div>
             </Link>
           </li>

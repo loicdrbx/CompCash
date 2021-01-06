@@ -8,6 +8,7 @@ import DNav from '../../components/DNav/DNav';
 import DHome from '../../components/DHome/DHome';
 import DNewBox from '../../components/DNewBox/DNewBox';
 import DGuide from '../../components/DGuide/DGuide';
+import DTool from '../../components/DTool/DTool';
 
 function Dashboard() {
   let { path, url } = useRouteMatch();
@@ -22,6 +23,7 @@ function Dashboard() {
             <Route exact path={path + '/'} component={DHome} />
             <Route exact path={path + '/boxes'} component={DNewBox} />
             <Route exact path={path + '/guide'} component={DGuide} />
+            <Route exact path={path + '/tool'} component={DTool} />
           </Switch>
         </div>
       </div>
