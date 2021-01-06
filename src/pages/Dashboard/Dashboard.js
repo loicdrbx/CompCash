@@ -13,7 +13,7 @@ function Dashboard() {
 
   console.log(path);
   return (
-    <div className="container dashboard">
+    <div className="container dashboard mb-5">
       <div className="row">
         <DNav />
         <div className="col ml-2">

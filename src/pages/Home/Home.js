@@ -135,11 +135,6 @@ function Home() {
       <div className="row justify-content-center margin-t-70 margin-b-120">
         <img src={cusec} className="col-2" />
       </div>
-      <div className="footer">
-        <p className="text-center py-3 m-0">
-          CompCash | A CUSEC Hackacomm Product
-        </p>
-      </div>
     </div>
   );
 }
