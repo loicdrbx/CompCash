@@ -89,3 +89,7 @@ p {
 span {
   margin-left: 0 !important;
 }
+
+.bold {
+  font-weight: 600 !important;
+}
