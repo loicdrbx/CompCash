@@ -12,7 +12,7 @@ const logOut = () => {
     });
 };
 
-export default {
+export {
   getUser,
   logOut,
 };
