@@ -2,7 +2,7 @@ import { auth } from './index';
 
 const getUser = () => {
   return auth().currentUser;
-}
+};
 
 const logOut = () => {
   auth()
@@ -12,7 +12,7 @@ const logOut = () => {
     });
 };
 
-export default {
+export {
   getUser,
   logOut,
 };

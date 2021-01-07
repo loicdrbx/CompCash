@@ -9,6 +9,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import { db } from '../../firebase/index';
+
 class DNewBox extends Component {
   constructor(props) {
     super(props);
@@ -39,9 +41,56 @@ class DNewBox extends Component {
     e.preventDefault();
     console.log(this.state);
     // Do something when the form is submitted
+    let dict = {
+      small: 1,
+      medium: 2,
+      large: 3,
+    };
+
+    db()
+      .collection('Boxes')
+      .doc()
+      .set({
+        boxsize: dict[this.state.size],
+        completed: false,
+        nickname: this.state.nickname,
+        startdate: new Date(),
+        userid: 'Srju0S7suvRvyG1HC7Az',
+      })
+      .then(() => {
+        //Please do a popup alert here
+        console.log('Document successfully written!');
+        this.setState({
+          status: 1,
+        });
+      })
+      .catch((error) => {
+        console.error('Error writing document: ', error);
+        this.setState({
+          status: 0,
+        });
+      });
   };
 
   render() {
+    var ResultText = (props) => {
+      const results = props.result.status;
+      if (results == 1) {
+        return (
+          <p className="bold">
+            Successfully added{' '}
+            <span className="green">{props.result.nickname}!</span>
+          </p>
+        );
+      } else if (results == 0) {
+        return (
+          <p className="bold danger">Box failed to add! Refresh and retry.</p>
+        );
+      } else {
+        return null;
+      }
+    };
+
     return (
       <div className="dash-comp container pb-3">
         <Form className="ml-4" onSubmit={this.handleSubmit}>
@@ -84,6 +133,9 @@ class DNewBox extends Component {
             </Col>
           </Form.Group>
         </Form>
+        <div className="ml-4">
+          <ResultText result={this.state} />
+        </div>
       </div>
     );
   }
