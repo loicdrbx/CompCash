@@ -29,9 +29,15 @@ class DHome extends Component{
             //total day = boxsize*70
             let currentBoxSize = doc.data().boxsize
             let totalDaysRequired = currentBoxSize*70
+            let prcnt = 0, daysRemaining = totalDaysRequired
+            //startdate != current date
+            if(daysDiff != 0){
+              prcnt = Math.floor(daysDiff/totalDaysRequired*100)
+              daysRemaining = totalDaysRequired - daysDiff
+            }
+
+            //to get impact and esitimated income
             totalSize += currentBoxSize
-            let prcnt = Math.floor(daysDiff/totalDaysRequired*100)
-            let daysRemaining = totalDaysRequired - daysDiff
 
             boxesArray.push({
                 id: doc.id,
