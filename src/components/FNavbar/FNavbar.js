@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,32 @@ import { IconContext } from 'react-icons';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
+import { auth } from '../../firebase/index';
+
 function FNavbar() {
+  var user = auth().currentUser;
+  var renderNav;
+
+  // Check if there is a user logged in
+  if (user) {
+    console.log(user.displayName);
+    renderNav = (
+      <>
+        <LinkContainer to="/dashboard">
+          <Nav.Link className="navbar-link-text">Dashboard</Nav.Link>
+        </LinkContainer>
+        <p className="navbar-link-text my-2">{user.displayName}</p>
+        <img src={user.photoURL} className="profile-pic ml-2 mt-1" />
+      </>
+    );
+  } else {
+    renderNav = (
+      <LinkContainer to="/signin">
+        <Nav.Link className="navbar-link-text bold ">Login / Sign Up</Nav.Link>
+      </LinkContainer>
+    );
+  }
+
   return (
     <Navbar
       collapseOnSelect
@@ -28,14 +53,7 @@ function FNavbar() {
       />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className=""></Nav>
-        <Nav className="ml-auto">
-          <LinkContainer to="/">
-            <Nav.Link className="navbar-link-text">Home</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/dashboard">
-            <Nav.Link className="navbar-link-text">Dashboard</Nav.Link>
-          </LinkContainer>
-        </Nav>
+        <Nav className="ml-auto">{renderNav}</Nav>
       </Navbar.Collapse>
     </Navbar>
   );
