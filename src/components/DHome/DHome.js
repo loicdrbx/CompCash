@@ -1,47 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './DHome.css';
-import * as dbAPI from '../../firebase/dbApi';
-import * as authAPI from '../../firebase/authApi';
+// import * as dbAPI from '../../firebase/dbApi';
+// import * as authAPI from '../../firebase/authApi';
 import { db } from '../../firebase/index';
 
 import DBoxDisplay from '../DBoxDisplay/DBoxDisplay';
 
-class DHome extends React.Component{
+class DHome extends Component{
   state = {
-      boxesTestArray: [],
-      boxesNum: 0
+    currentUser: "Srju0S7suvRvyG1HC7Az",
+    totalBoxSize: 0,
+    //income: 77.78, //depends on the box size  1-> 32.32 CAD
+    //impactTrees: 1, //also depends on the box size 1->27trees
+    boxesArray: []
   }
 
-// const boxesTestArray = [
-//   {
-//     boxTitle: "Amy's Box - Backyard Corner",
-//     prcnt: '60',
-//     daysLeft: '28',
-//   },
-//   {
-//     boxTitle: "2Amy's Box - Backyard Corner",
-//     prcnt: '20',
-//     daysLeft: '18',
-//   },
-// ];
-
-//const boxesNum = boxesTestArray.length;
-
   componentDidMount() {
-    let boxesTestArray = [];
-    this.state = { boxesNum: 2 };
+    let boxesArray = [];
+    const currentDate = new Date().getTime();
+    let totalSize = 0;
 
-    db().collection("Boxes").get().then((snapshot) => (
-        snapshot.forEach((doc) => (
-            boxesTestArray.push({
+    db().collection("Boxes").get().then((snapshot) => {
+
+        snapshot.forEach((doc) => {
+          if(doc.data().userid == this.state.currentUser){
+            //today - startday
+            let daysDiff = Math.floor((currentDate - doc.data().startdate.toDate())/(1000 * 3600 * 24))
+            //total day = boxsize*70
+            let currentBoxSize = doc.data().boxsize
+            let totalDaysRequired = currentBoxSize*70
+            totalSize += currentBoxSize
+            let prcnt = Math.floor(daysDiff/totalDaysRequired*100)
+            let daysRemaining = totalDaysRequired - daysDiff
+
+            boxesArray.push({
                 id: doc.id,
                 boxTitle: doc.data().nickname,
-                prcnt: doc.data().boxsize
+                prcnt: prcnt,
+                daysLeft: daysRemaining
             })
-        )),
-
-        this.setState({ boxesTestArray })
-      ));
+          }})
+          this.setState({ totalBoxSize: totalSize, boxesArray})
+        }
+      )
 
   }
 
@@ -52,7 +53,7 @@ render() {
       <div className="dash-comp container pb-4">
         <h4 className="ml-4 pt-4">Boxes Summary</h4>
         <div className="pt-4">
-        {this.state.boxesTestArray.map((box) => (
+        {this.state.boxesArray.map((box) => (
           <DBoxDisplay
             boxTitle={box.boxTitle}
             prcnt={box.prcnt}
@@ -65,11 +66,11 @@ render() {
         <div className="ml-4 pt-4">
           <h4>Estimated Income</h4>
           <p>
-            You have {this.state.boxesNum} boxes registered. With the sizes that you have
+            You have {this.state.boxesArray.length} boxes registered. With the sizes that you have
             selected, your estimated income will be
           </p>
           <h1>
-            $<span className="green">37.48</span> CAD
+            $<span className="green">{this.state.totalBoxSize * 32.31}</span> CAD
           </h1>
         </div>
       </div>
@@ -82,7 +83,8 @@ render() {
             total of
           </p>
           <h1>
-            <span className="green">127 </span> trees.
+            <span className="green">{
+              this.state.totalBoxSize * 27} </span> trees.
           </h1>
         </div>
       </div>

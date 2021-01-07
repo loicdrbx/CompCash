@@ -9,6 +9,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import { db } from '../../firebase/index';
+
 class DNewBox extends Component {
   constructor(props) {
     super(props);
@@ -39,6 +41,27 @@ class DNewBox extends Component {
     e.preventDefault();
     console.log(this.state);
     // Do something when the form is submitted
+    let dict = {
+      "small": 1,
+      "medium": 2,
+      "large" : 3
+    }
+
+    db().collection("Boxes").doc().set({
+      boxsize: dict[this.state.size],
+      completed: false,
+      nickname: this.state.nickname,
+      startdate: new Date(),
+      userid: "Srju0S7suvRvyG1HC7Az"
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
+    });
+
+
   };
 
   render() {
