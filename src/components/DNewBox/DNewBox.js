@@ -55,6 +55,7 @@ class DNewBox extends Component {
       userid: "Srju0S7suvRvyG1HC7Az"
     })
     .then(function() {
+      //Please do a popup alert here
         console.log("Document successfully written!");
     })
     .catch(function(error) {
