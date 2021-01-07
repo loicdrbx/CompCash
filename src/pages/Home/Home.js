@@ -24,9 +24,13 @@ function Home() {
               easy cash while practicing a good deed for the environment.
             </p>
             <div className="row m-0">
-              <FButtonPill value="Learn More" href="#" style="dark" />
+              <FButtonPill value="Learn More" style="dark" href="#intro" />
               <div className="ml-3">
-                <FButtonPill value="Register Now" href="#" style="green" />
+                <FButtonPill
+                  value="Register Now"
+                  style="green"
+                  href="/signin"
+                />
               </div>
             </div>
           </div>
@@ -36,7 +40,7 @@ function Home() {
         </div>
       </div>
       <div className="">
-        <h2 className="text-center">
+        <h2 className="text-center" id="intro">
           Introducing <span className="green">CompCash</span>
         </h2>
         <div className="row justify-content-center">

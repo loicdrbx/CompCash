@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../SidebarData';
 import './FNavbar.css';
-import { IconContext } from 'react-icons';
+import { Redirect } from 'react-router-dom';
 
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
@@ -12,6 +12,14 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { auth } from '../../firebase/index';
 
 function FNavbar() {
+  const logOut = () => {
+    auth()
+      .signOut()
+      .catch((error) => {
+        alert(error.message);
+      });
+    window.location.reload(false);
+  };
   var user = auth().currentUser;
   var renderNav;
 
@@ -23,6 +31,9 @@ function FNavbar() {
         <LinkContainer to="/dashboard">
           <Nav.Link className="navbar-link-text">Dashboard</Nav.Link>
         </LinkContainer>
+        <Nav.Link className="navbar-link-text" onClick={logOut}>
+          Sign Out
+        </Nav.Link>
         <p className="navbar-link-text my-2">{user.displayName}</p>
         <img src={user.photoURL} className="profile-pic ml-2 mt-1" />
       </>

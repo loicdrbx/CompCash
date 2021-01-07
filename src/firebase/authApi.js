@@ -2,7 +2,7 @@ import { auth } from './index';
 
 const getUser = () => {
   return auth().currentUser;
-}
+};
 
 const logOut = () => {
   auth()
