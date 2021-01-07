@@ -1,5 +1,5 @@
 import React from 'react';
-import AuthUI from '../../components/AuthUI';
+import AuthUI from '../../components/AuthUI/AuthUI';
 import './Home.css';
 import FButtonPill from '../../components/FButtonPill/FButtonPill';
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import AuthUI from '../../components/AuthUI';
 import './Dashboard.css';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import FButtonPill from '../../components/FButtonPill/FButtonPill';

@@ -1,6 +1,7 @@
 import React from 'react';
-import { auth } from '../firebase/index';
+import { auth } from '../../firebase/index';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import './AuthUI.css';
 
 const uiConfig = {
   signInFlow: 'popup',
@@ -8,14 +9,18 @@ const uiConfig = {
   signInOptions: [
     auth.GoogleAuthProvider.PROVIDER_ID,
     auth.GithubAuthProvider.PROVIDER_ID,
-    'microsoft.com',
   ],
 };
 
 const AuthUI = () => {
   return (
-    <div className="mt-5">
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth()} />
+    <div className="">
+      <StyledFirebaseAuth
+        uiConfig={uiConfig}
+        firebaseAuth={auth()}
+        className="auth-ui "
+        style={{ backgroundColor: '#FFF' }}
+      />
     </div>
   );
 };
