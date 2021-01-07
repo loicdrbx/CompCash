@@ -23,6 +23,12 @@
   padding: 8px !important;
 }
 
+.profile-pic {
+  border-radius: 100em;
+  width: 35px;
+  height: 35px;
+}
+
 @media (max-width: 576px) {
   .navbar-link-text {
     margin-left: 0rem !important;
