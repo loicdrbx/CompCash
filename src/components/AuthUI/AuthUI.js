@@ -18,7 +18,7 @@ const AuthUI = () => {
       <StyledFirebaseAuth
         uiConfig={uiConfig}
         firebaseAuth={auth()}
-        className="auth-ui"
+        className="auth-ui "
         style={{ backgroundColor: '#FFF' }}
       />
     </div>
