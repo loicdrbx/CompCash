@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
@@ -9,7 +9,10 @@ import { IconContext } from 'react-icons';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
+import getUser from '../../firebase/authApi.js';
+
 function FNavbar() {
+  console.log(getUser.getUser);
   return (
     <Navbar
       collapseOnSelect
@@ -29,12 +32,10 @@ function FNavbar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className=""></Nav>
         <Nav className="ml-auto">
-          <LinkContainer to="/">
-            <Nav.Link className="navbar-link-text">Home</Nav.Link>
-          </LinkContainer>
           <LinkContainer to="/dashboard">
             <Nav.Link className="navbar-link-text">Dashboard</Nav.Link>
           </LinkContainer>
+          <p className="navbar-link-text my-2">Signed in </p>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
