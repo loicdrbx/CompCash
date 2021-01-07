@@ -12,7 +12,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 import getUser from '../../firebase/authApi.js';
 
 function FNavbar() {
-  console.log(getUser.getUser);
+  console.log(getUser);
   return (
     <Navbar
       collapseOnSelect
