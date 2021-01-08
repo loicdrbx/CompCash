@@ -6,12 +6,81 @@ const app = new Clarifai.App({
   apiKey: '41052665517141b6a60931faddba113b',
 });
 
-
-const COMPOSTABLE_ITEMS = ["broccoli", "cabbage", "vegetable", "cauliflower", "egg", "food", "eggshell", "fruit", "leaf", "tree", "root", "carrot", "bread", "toast", "wheat", "loaf", "bakery", "apple", "rice", "cereal", "napkin", "sugar ", "powder", "salt", "snow", "fish"];
-const NON_COMPOSTABLE_ITEMS = ["bottle", "plastic", "glass", "can", "metallic", "cutlery", "spoon", "steel", "knife", "fork", "stainless steel", "knife blade", "iron", "utensil", "cheese", "dairy", "Gouda", "cheddar", "Parmesan", "milk", "steak", "sirloin", "beef", "tenderloin", "beefsteak", "fillet", "red meat", "chicken", "poultry", "duck", "meat", "pork", "bottle", "medicine", "aspirin", "medicine", "telephone", "plate", "animal", "pen", "electronics", "appliance"];
+const COMPOSTABLE_ITEMS = [
+  'broccoli',
+  'cabbage',
+  'vegetable',
+  'cauliflower',
+  'egg',
+  'food',
+  'eggshell',
+  'fruit',
+  'leaf',
+  'tree',
+  'root',
+  'carrot',
+  'bread',
+  'toast',
+  'wheat',
+  'loaf',
+  'bakery',
+  'apple',
+  'rice',
+  'cereal',
+  'napkin',
+  'sugar ',
+  'powder',
+  'salt',
+  'snow',
+  'fish',
+];
+const NON_COMPOSTABLE_ITEMS = [
+  'bottle',
+  'plastic',
+  'glass',
+  'can',
+  'metallic',
+  'cutlery',
+  'spoon',
+  'steel',
+  'knife',
+  'fork',
+  'stainless steel',
+  'knife blade',
+  'iron',
+  'utensil',
+  'cheese',
+  'dairy',
+  'Gouda',
+  'cheddar',
+  'Parmesan',
+  'milk',
+  'steak',
+  'sirloin',
+  'beef',
+  'tenderloin',
+  'beefsteak',
+  'fillet',
+  'red meat',
+  'chicken',
+  'poultry',
+  'duck',
+  'meat',
+  'pork',
+  'bottle',
+  'medicine',
+  'aspirin',
+  'medicine',
+  'telephone',
+  'plate',
+  'animal',
+  'pen',
+  'electronics',
+  'appliance',
+];
 
 function DTool() {
-  const status = 0;
+  var status = 0;
   const [compostable, setCompostable] = useState([]);
   const [nonCompostable, setNonCompostable] = useState([]);
   const [source, setSource] = useState('');
@@ -70,7 +139,7 @@ function DTool() {
   const nonCompstableString = nonCompostable.toString();
 
   const DisplayItems = () => {
-    if (status === 1 && compstableString === '' && nonCompstableString === '') {
+    if (compstableString === '' && nonCompstableString === '') {
       return (
         <p className="bold">
           Welp, looks like our "intelligent" model can't figure out the contents
