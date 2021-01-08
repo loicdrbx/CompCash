@@ -23,11 +23,18 @@ class DHome extends Component {
       3: 232.35,
     };
 
+    //box size and daysRemaining dictionary
     let requiredDaysDict = {
       1: 180,
       2: 150,
       3: 120,
     };
+
+    let boxSizeDict = {
+      1: "Small",
+      2: "Medium",
+      3: "Large"
+    }
 
     db()
       .collection('Boxes')
@@ -59,6 +66,7 @@ class DHome extends Component {
               boxTitle: doc.data().nickname,
               prcnt: prcnt,
               daysLeft: daysRemaining,
+              boxsize: boxSizeDict[currentBoxSize]
             });
           }
         });
@@ -67,10 +75,7 @@ class DHome extends Component {
   }
 
   render() {
-    const income = () => {
-      console.log(this.state.totalBoxSize);
-      return this.state.totalBoxSize * 32.31;
-    };
+    
     return (
       <>
         <div className="dash-comp container pb-4">
@@ -81,7 +86,7 @@ class DHome extends Component {
                 boxTitle={box.boxTitle}
                 prcnt={box.prcnt}
                 daysLeft={box.daysLeft}
-                size="small"
+                size={box.boxsize}
               />
             ))}
           </div>
