@@ -9,7 +9,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
-import { db } from '../../firebase/index';
+import { db, auth } from '../../firebase/index';
 
 class DNewBox extends Component {
   constructor(props) {
@@ -55,16 +55,16 @@ class DNewBox extends Component {
         completed: false,
         nickname: this.state.nickname,
         startdate: new Date(),
-        userid: 'Srju0S7suvRvyG1HC7Az',
+        userid: auth().currentUser.uid,
       })
-      .then(() => {
+      .then(function () {
         //Please do a popup alert here
         console.log('Document successfully written!');
         this.setState({
           status: 1,
         });
       })
-      .catch((error) => {
+      .catch(function (error) {
         console.error('Error writing document: ', error);
         this.setState({
           status: 0,

@@ -1,24 +1,33 @@
 import React, { Component } from 'react';
 import './DHome.css';
-// import * as dbAPI from '../../firebase/dbApi';
-// import * as authAPI from '../../firebase/authApi';
-import { db } from '../../firebase/index';
+import { db, auth } from '../../firebase/index';
 
 import DBoxDisplay from '../DBoxDisplay/DBoxDisplay';
 
 class DHome extends Component {
   state = {
-    currentUser: 'Srju0S7suvRvyG1HC7Az',
-    totalBoxSize: 0,
-    //income: 77.78, //depends on the box size  1-> 32.32 CAD
-    //impactTrees: 1, //also depends on the box size 1->27trees
+    currentUser: auth().currentUser.uid,
+    income: 0,
     boxesArray: [],
   };
 
   componentDidMount() {
     let boxesArray = [];
     const currentDate = new Date().getTime();
-    let totalSize = 0;
+    let totalIncome = 0;
+
+    //box size and income dicionary
+    let incomeDict = {
+      1: 12.26,
+      2: 98.02,
+      3: 232.35,
+    };
+
+    let requiredDaysDict = {
+      1: 180,
+      2: 150,
+      3: 120,
+    };
 
     db()
       .collection('Boxes')
@@ -32,7 +41,8 @@ class DHome extends Component {
             );
             //total day = boxsize*70
             let currentBoxSize = doc.data().boxsize;
-            let totalDaysRequired = currentBoxSize * 70;
+            let currentIncome = incomeDict[currentBoxSize];
+            let totalDaysRequired = requiredDaysDict[currentBoxSize];
             let prcnt = 0,
               daysRemaining = totalDaysRequired;
             //startdate != current date
@@ -42,7 +52,7 @@ class DHome extends Component {
             }
 
             //to get impact and esitimated income
-            totalSize += currentBoxSize;
+            totalIncome += currentIncome;
 
             boxesArray.push({
               id: doc.id,
@@ -52,7 +62,7 @@ class DHome extends Component {
             });
           }
         });
-        this.setState({ totalBoxSize: totalSize, boxesArray });
+        this.setState({ income: totalIncome, boxesArray });
       });
   }
 
@@ -75,6 +85,7 @@ class DHome extends Component {
             ))}
           </div>
         </div>
+
         <div className="dash-comp container mt-4 pb-3">
           <div className="ml-4 pt-4">
             <h4>Estimated Income</h4>
@@ -82,12 +93,8 @@ class DHome extends Component {
               You have {this.state.boxesArray.length} boxes registered. With the
               sizes that you have selected, your estimated income will be
             </p>
-            <h1 className="h1-text">
-              $
-              <span className="green">
-                {(this.state.totalBoxSize * 32.31).toFixed(2)}
-              </span>{' '}
-              CAD
+            <h1>
+              $<span className="green">{this.state.income}</span> CAD
             </h1>
           </div>
         </div>
@@ -99,8 +106,10 @@ class DHome extends Component {
               You're a legend! With your contributions, CompCash has donated a
               total of
             </p>
-            <h1 className="h1-text">
-              <span className="green">{this.state.totalBoxSize * 27} </span>{' '}
+            <h1>
+              <span className="green">
+                {(this.state.income / 106).toFixed(1)}{' '}
+              </span>{' '}
               trees.
             </h1>
           </div>
