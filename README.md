@@ -1,6 +1,11 @@
 # CompCash #
+
+<p align="center">
+
+Earn passive income from your waste!
 Check out our prototype at [CompCash](https://project-compost.web.app/) 
-### Earn passive income from your waste ###
+
+</p>
 
 ---
 
@@ -32,11 +37,27 @@ CompCash is currently deployed on Firebase and open for all to sign up and use.
 #### Highlighted Features ####
 
 1. Home Page
+<p align="center">
 
 ![grab-landing-page](https://github.com/Wolf4992/Project-Compost/blob/main/readmeAssets/Compcash%20Homepage.gif)
 
+</p>
+
 2. User Auth and Login
+
+<p align="center">
+
 ![grab-auth-page](https://github.com/Wolf4992/Project-Compost/blob/main/readmeAssets/CompCash%20Authpage.jpg)
+
+</p>
+
+3. Dashboard
+
+<p align="center">
+
+![grab-auth-page]()
+
+</p>
 
 ### Significant Design Decisions ###
 
