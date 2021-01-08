@@ -6,8 +6,9 @@ const app = new Clarifai.App({
   apiKey: '41052665517141b6a60931faddba113b',
 });
 
-const COMPOSTABLE_ITEMS = ['food', 'fruit', 'water'];
-const NON_COMPOSTABLE_ITEMS = ['plastic', 'glass', 'cutlery', 'animal'];
+
+const COMPOSTABLE_ITEMS = ["broccoli", "cabbage", "vegetable", "cauliflower", "egg", "food", "eggshell", "fruit", "leaf", "tree", "root", "carrot", "bread", "toast", "wheat", "loaf", "bakery", "apple", "rice", "cereal", "napkin", "sugar ", "powder", "salt", "snow", "fish"];
+const NON_COMPOSTABLE_ITEMS = ["bottle", "plastic", "glass", "can", "metallic", "cutlery", "spoon", "steel", "knife", "fork", "stainless steel", "knife blade", "iron", "utensil", "cheese", "dairy", "Gouda", "cheddar", "Parmesan", "milk", "steak", "sirloin", "beef", "tenderloin", "beefsteak", "fillet", "red meat", "chicken", "poultry", "duck", "meat", "pork", "bottle", "medicine", "aspirin", "medicine", "telephone", "plate", "animal", "pen", "electronics", "appliance"];
 
 function DTool() {
   const status = 0;
