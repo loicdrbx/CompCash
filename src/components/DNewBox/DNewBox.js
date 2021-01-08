@@ -12,7 +12,7 @@ import { db, auth } from '../../firebase/index';
 class DNewBox extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { nickname: '', size: '' };
   }
 
   state = {
@@ -38,52 +38,63 @@ class DNewBox extends Component {
   handleSubmit = (e, props) => {
     e.preventDefault();
     console.log(this.state);
-    // Do something when the form is submitted
-    let dict = {
-      small: 1,
-      medium: 2,
-      large: 3,
-    };
 
-    db()
-      .collection('Boxes')
-      .doc()
-      .set({
-        boxsize: dict[this.state.size],
-        completed: false,
-        nickname: this.state.nickname,
-        startdate: new Date(),
-        userid: auth().currentUser.uid,
-      })
-      .then(() => {
-        //Please do a popup alert here
-        console.log('Document successfully written!');
-        this.setState({
-          status: 1,
-        });
-      })
-      .catch((error) => {
-        console.error('Error writing document: ', error);
-        this.setState({
-          status: 0,
-        });
+    if (this.state.size === '' || this.state.nickname === '') {
+      this.setState({
+        status: 2,
       });
+      console.log('FAAILLL');
+    } else {
+      console.log('Successssss');
+      // Do something when the form is submitted
+      let dict = {
+        small: 1,
+        medium: 2,
+        large: 3,
+      };
+
+      db()
+        .collection('Boxes')
+        .doc()
+        .set({
+          boxsize: dict[this.state.size],
+          completed: false,
+          nickname: this.state.nickname,
+          startdate: new Date(),
+          userid: auth().currentUser.uid,
+        })
+        .then(() => {
+          //Please do a popup alert here
+          console.log('Document successfully written!');
+          this.setState({
+            status: 1,
+          });
+        })
+        .catch((error) => {
+          console.error('Error writing document: ', error);
+          this.setState({
+            status: 0,
+          });
+        });
+    }
   };
 
   render() {
     var ResultText = (props) => {
-      const results = props.result.status;
-      if (results === 1) {
+      const resultStatus = props.result.status;
+      if (resultStatus === 1) {
         return (
           <p className="bold">
             Successfully added{' '}
             <span className="green">{props.result.nickname}!</span>
           </p>
         );
-      } else if (results === 0) {
+      } else if (resultStatus === 0) {
         return (
           <p className="bold danger">Box failed to add! Refresh and retry.</p>
         );
+      } else if (resultStatus === 2) {
+        return <p className="bold danger">One of the fields may be empty!</p>;
       } else {
         return null;
       }
