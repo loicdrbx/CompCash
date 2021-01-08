@@ -1,22 +1,14 @@
 # CompCash #
 
-<p align="center">
-
 Earn passive income from your waste!
-Check out our prototype at [CompCash](https://project-compost.web.app/) 
 
-</p>
+Check out our prototype at [CompCash](https://project-compost.web.app/) 
 
 ---
 
 CompCash is an open-source non profit project to incentivize at home composting by giving our users a chance to make money from the fertilizer that they create through their composting. We make it easy to get started and guide our users through the process. Once they have completed the composting process, they bring their composte box to us to recieve payment in exchange for the fertilizer.
 
 CompCash is currently deployed on Firebase and open for all to sign up and use.
-
-### How is it built? ###
-
-### How does it work? ###
-
 
 ### Additional Info ###
 
@@ -27,12 +19,6 @@ CompCash is currently deployed on Firebase and open for all to sign up and use.
 ..* [Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
 
 ..* [Sendgrid](https://sendgrid.com/docs/api-reference/)
-
-### Goals ###
-
-
-### Hackathon Criteria ###
-
 
 #### Highlighted Features ####
 
@@ -55,12 +41,13 @@ CompCash is currently deployed on Firebase and open for all to sign up and use.
 
 <p align="center">
 
-![grab-auth-page]()
+![grab-auth-page](https://github.com/Wolf4992/Project-Compost/blob/main/readmeAssets/CompCast%20Dashboard.gif)
 
 </p>
 
 ### Significant Design Decisions ###
 
+1. We started with looking to use the Zapier API but realized that it would pose issues. We then also had to to upgrade our Firebase Plan so that we could use the Sendgrid API. In the future, it might be easier to implement an Email Trigger Extension or the gmail API.
 
 ### Notes ###
 
