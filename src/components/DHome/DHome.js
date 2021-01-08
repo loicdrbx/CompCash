@@ -75,12 +75,13 @@ class DHome extends Component {
       <>
         <div className="dash-comp container pb-4">
           <h4 className="ml-4 pt-4">Boxes Summary</h4>
-          <div className="pt-4">
+          <div className="mt-4">
             {this.state.boxesArray.map((box) => (
               <DBoxDisplay
                 boxTitle={box.boxTitle}
                 prcnt={box.prcnt}
                 daysLeft={box.daysLeft}
+                size="small"
               />
             ))}
           </div>

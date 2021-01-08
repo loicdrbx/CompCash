@@ -8,7 +8,8 @@ function DBoxDisplay(props) {
   return (
     <div className="">
       <div className="mx-4">
-        <h5 className="">{props.boxTitle}</h5>
+        <h5 className="mb-0">{props.boxTitle}</h5>
+        <p>Size: {props.size}</p>
         <div className="row justify-content-start align-items-center mt-3">
           <div className="col-1">
             <FaIcons.FaBox
