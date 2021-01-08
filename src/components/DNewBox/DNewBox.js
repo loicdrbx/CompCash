@@ -5,9 +5,7 @@ import FButtonPill from '../FButtonPill/FButtonPill';
 
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 
 import { db } from '../../firebase/index';
 
@@ -26,7 +24,7 @@ class DNewBox extends Component {
 
   handleChange = (e) => {
     const value = e.target.value;
-    if (e.target.type == 'radio') {
+    if (e.target.type === 'radio') {
       this.setState({
         [e.target.name]: e.target.id,
       });
@@ -75,14 +73,14 @@ class DNewBox extends Component {
   render() {
     var ResultText = (props) => {
       const results = props.result.status;
-      if (results == 1) {
+      if (results === 1) {
         return (
           <p className="bold">
             Successfully added{' '}
             <span className="green">{props.result.nickname}!</span>
           </p>
         );
-      } else if (results == 0) {
+      } else if (results === 0) {
         return (
           <p className="bold danger">Box failed to add! Refresh and retry.</p>
         );

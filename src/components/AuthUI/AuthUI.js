@@ -9,6 +9,7 @@ const uiConfig = {
   signInOptions: [
     auth.GoogleAuthProvider.PROVIDER_ID,
     auth.GithubAuthProvider.PROVIDER_ID,
+    'microsoft.com',
   ],
 };
 

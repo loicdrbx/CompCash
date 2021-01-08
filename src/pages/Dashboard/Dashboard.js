@@ -1,7 +1,6 @@
 import React from 'react';
 import './Dashboard.css';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import FButtonPill from '../../components/FButtonPill/FButtonPill';
 
 import DNav from '../../components/DNav/DNav';
 import DHome from '../../components/DHome/DHome';
@@ -10,9 +9,8 @@ import DGuide from '../../components/DGuide/DGuide';
 import DTool from '../../components/DTool/DTool';
 
 function Dashboard() {
-  let { path, url } = useRouteMatch();
+  let { path } = useRouteMatch();
 
-  console.log(path);
   return (
     <div className="container dashboard mb-5">
       <div className="row justify-content-md-between justify-content-center">

@@ -1,12 +1,7 @@
-import React, { useState, useContext } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import { Link } from 'react-router-dom';
-import { SidebarData } from '../SidebarData';
+import React from 'react';
 import './FNavbar.css';
-import { Redirect } from 'react-router-dom';
 
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import { auth } from '../../firebase/index';
@@ -25,7 +20,6 @@ function FNavbar() {
 
   // Check if there is a user logged in
   if (user) {
-    console.log(user.displayName);
     renderNav = (
       <>
         <LinkContainer to="/dashboard">
@@ -35,7 +29,7 @@ function FNavbar() {
           Sign Out
         </Nav.Link>
         <p className="navbar-link-text my-2">{user.displayName}</p>
-        <img src={user.photoURL} className="profile-pic ml-2 mt-1" />
+        <img src={user.photoURL} className="profile-pic ml-2 mt-1" alt="profile" />
       </>
     );
   } else {

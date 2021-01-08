@@ -15,7 +15,7 @@ function SignIn() {
       <div className="signin-page container">
         <div className="row justify-content-center justify-content-md-between align-items-center h-100">
           <div className="col-12 col-md-6 order-2 order-md-1 mt-n5">
-            <img src={graphic} className="col" />
+            <img src={graphic} className="col" alt="login graphic" />
           </div>
           <div className="col-11 col-md-6 order-1 order-md-2  ">
             <h3 className="text-center">Login with a provider</h3>

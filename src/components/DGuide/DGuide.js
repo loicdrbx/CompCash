@@ -28,7 +28,7 @@ function DGuide() {
               </p>
             </div>
             <div className="col-12 col-md-4">
-              <img src={guide1} className="col" />
+              <img src={guide1} className="col" alt="man carrying compost bin" />
             </div>
           </div>
 
@@ -41,7 +41,7 @@ function DGuide() {
               </p>
             </div>
             <div className="col-12 col-md-4">
-              <img src={guide2} className="col" />
+              <img src={guide2} className="col" alt="man carrying compost bin outdoors" />
             </div>
           </div>
 
@@ -55,7 +55,7 @@ function DGuide() {
               </p>
             </div>
             <div className="col-12 col-md-4">
-              <img src={guide3} className="col" />
+              <img src={guide3} className="col" alt="woman setting up compost box" />
             </div>
           </div>
 
@@ -69,7 +69,7 @@ function DGuide() {
               </p>
             </div>
             <div className="col-12 col-md-4">
-              <img src={guide4} className="col" />
+              <img src={guide4} className="col" alt="plant growing from dirt in person's palm" />
             </div>
           </div>
 
@@ -84,7 +84,7 @@ function DGuide() {
               </p>
             </div>
             <div className="col-12 col-md-4">
-              <img src={guide5} className="col" />
+              <img src={guide5} className="col" alt="cartoon landscape" />
             </div>
           </div>
 
@@ -98,7 +98,7 @@ function DGuide() {
               </p>
             </div>
             <div className="col-12 col-md-4">
-              <img src={guide6} className="col" />
+              <img src={guide6} className="col" alt="cartoon piggy bank" />
             </div>
           </div>
         </div>
