@@ -6,7 +6,6 @@ import FNavbar from './components/FNavbar/FNavbar';
 import Footer from './components/Footer/Footer';
 
 import { AuthProvider } from './providers/Auth';
-import AuthUI from './components/AuthUI/AuthUI';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {

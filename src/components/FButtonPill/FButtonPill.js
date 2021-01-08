@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import './FButtonPill.css';
 
 class FButtonPill extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     var tg = '';
     if (this.props.newTab === true) {

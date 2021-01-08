@@ -41,7 +41,7 @@ class DHome extends Component {
       .get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          if (doc.data().userid == this.state.currentUser) {
+          if (doc.data().userid === this.state.currentUser) {
             //today - startday
             let daysDiff = Math.floor(
               (currentDate - doc.data().startdate.toDate()) / (1000 * 3600 * 24)
@@ -53,7 +53,7 @@ class DHome extends Component {
             let prcnt = 0,
               daysRemaining = totalDaysRequired;
             //startdate != current date
-            if (daysDiff != 0) {
+            if (daysDiff !== 0) {
               prcnt = Math.floor((daysDiff / totalDaysRequired) * 100);
               daysRemaining = totalDaysRequired - daysDiff;
             }
@@ -75,7 +75,6 @@ class DHome extends Component {
   }
 
   render() {
-    
     return (
       <>
         <div className="dash-comp container pb-4">
