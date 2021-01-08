@@ -1,4 +1,4 @@
-# CompCash #
+[#CompCash#](https://project-compost.web.app/)
 ### Earn passive income from your waste ###
 
 CompCash is an open-source non profit project to incentivize at home composting by giving our users a chance to make money from the fertilizer that they create through their composting. We make it easy to get started and guide our users through the process. Once they have completed the composting process, they bring their composte box to us to recieve payment in exchange for the fertilizer.
@@ -27,8 +27,13 @@ CompCash is currently deployed on Firebase and open for all to sign up and use.
 
 
 #### Highlighted Features ####
+
 1. Home Page
+
 ![grab-landing-page](https://github.com/Wolf4992/Project-Compost/blob/main/readmeAssets/Compcash%20Homepage.gif)
+
+2. User Auth and Login
+![alt text]()
 
 ### Significant Design Decisions ###
 
