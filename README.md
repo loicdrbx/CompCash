@@ -12,13 +12,13 @@ CompCash is currently deployed on Firebase and open for all to sign up and use.
 
 ### Additional Info ###
 
-+[Authentication](https://firebase.google.com/docs/auth)
+..* [Authentication](https://firebase.google.com/docs/auth)
 
-+[Firestore](https://firebase.google.com/docs/firestore)
+..* [Firestore](https://firebase.google.com/docs/firestore)
 
-+[Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
+..* [Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
 
-+[Sendgrid](https://sendgrid.com/docs/api-reference/)
+..* [Sendgrid](https://sendgrid.com/docs/api-reference/)
 
 ### Goals ###
 
@@ -27,7 +27,8 @@ CompCash is currently deployed on Firebase and open for all to sign up and use.
 
 
 #### Highlighted Features ####
-
+1. Home Page
+![grab-landing-page](https://github.com/Wolf4992/Project-Compost/blob/main/readmeAssets/Compcash%20Homepage.gif)
 
 ### Significant Design Decisions ###
 
