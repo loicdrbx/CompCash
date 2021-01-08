@@ -10,17 +10,21 @@ CompCash is an open-source non profit project to incentivize at home composting 
 
 CompCash is currently deployed on Firebase and open for all to sign up and use.
 
+---
+
 ### Additional Info ###
 
-..* [Authentication](https://firebase.google.com/docs/auth)
+1. [Authentication](https://firebase.google.com/docs/auth)
 
-..* [Firestore](https://firebase.google.com/docs/firestore)
+2. [Firestore](https://firebase.google.com/docs/firestore)
 
-..* [Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
+3. [Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
 
-..* [Sendgrid](https://sendgrid.com/docs/api-reference/)
+4. [Sendgrid](https://sendgrid.com/docs/api-reference/)
 
-#### Highlighted Features ####
+---
+
+### Highlighted Features ###
 
 1. Home Page
 <p align="center">
@@ -45,9 +49,13 @@ CompCash is currently deployed on Firebase and open for all to sign up and use.
 
 </p>
 
+---
+
 ### Significant Design Decisions ###
 
 1. We started with looking to use the Zapier API but realized that it would pose issues. We then also had to to upgrade our Firebase Plan so that we could use the Sendgrid API. In the future, it might be easier to implement an Email Trigger Extension or the gmail API.
+
+---
 
 ### Notes ###
 
