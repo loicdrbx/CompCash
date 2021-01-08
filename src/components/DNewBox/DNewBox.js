@@ -57,14 +57,14 @@ class DNewBox extends Component {
         startdate: new Date(),
         userid: auth().currentUser.uid,
       })
-      .then(function () {
+      .then(() => {
         //Please do a popup alert here
         console.log('Document successfully written!');
         this.setState({
           status: 1,
         });
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.error('Error writing document: ', error);
         this.setState({
           status: 0,
