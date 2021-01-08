@@ -5,32 +5,37 @@ CompCash is an open-source non profit project to incentivize at home composting 
 
 CompCash is currently deployed on Firebase and open for all to sign up and use.
 
-# How is it built? #
+### How is it built? ###
 
-# How does it work? #
-
-
-# Additional Info #
-
-*[Authentication](https://firebase.google.com/docs/auth)
-*[Firestore](https://firebase.google.com/docs/firestore)
-*[Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
-*[Sendgrid](https://sendgrid.com/docs/api-reference/)
-
-# Goals #
+### How does it work? ###
 
 
-# Hackathon Criteria #
+### Additional Info ###
+
++[Authentication](https://firebase.google.com/docs/auth)
+
++[Firestore](https://firebase.google.com/docs/firestore)
+
++[Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
+
++[Sendgrid](https://sendgrid.com/docs/api-reference/)
+
+### Goals ###
 
 
-## Highlighted Features ##
+### Hackathon Criteria ###
 
 
-# Significant Design Decisions #
+#### Highlighted Features ####
 
 
-# Notes #
+### Significant Design Decisions ###
+
+
+### Notes ###
 
 1. Please note that in the Functions folder, the Sendgrid API is not correctly used by calling it through the .env file. Unfortunately we had issues with this where the authentication would fail and thus we simply are directly calling it from the index.js file for the purposes of the hackathon.
-_This is bad practice and you should not do the same_
-_This will be fixed in future versions of the app_
+
+__This is bad practice and you should not do the same__
+
+__This will be fixed in future versions of the app__
