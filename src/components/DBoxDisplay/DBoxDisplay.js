@@ -17,13 +17,15 @@ function DBoxDisplay(props) {
               style={{ color: '#2f2e41' }}
             />
           </div>
-          <ProgressBar
-            style={{ backgroundColor: '#2f2e41' }}
-            className="col-11 p-0"
-            now={props.prcnt}
-          />
+          <div className="col-10 col-md-11">
+            <ProgressBar
+              style={{ backgroundColor: '#2f2e41' }}
+              className="col-12 p-0"
+              now={props.prcnt}
+            />
+          </div>
         </div>
-        <p className="text-center">
+        <p className="text-left text-md-center">
           {props.prcnt}% Completed | {props.daysLeft} Days Remaining
         </p>
       </div>

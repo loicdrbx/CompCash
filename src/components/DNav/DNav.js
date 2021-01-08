@@ -7,7 +7,7 @@ import './DNav.css';
 
 function DNav() {
   return (
-    <div className="col-12 col-md-3 dnav h-100">
+    <div className="col-11 col-md-3 dnav h-100">
       <nav>
         <ul className="nav-menu-items">
           <li className="nav-item">

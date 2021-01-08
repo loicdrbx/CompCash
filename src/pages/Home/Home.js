@@ -71,10 +71,10 @@ function Home() {
         </div>
 
         <div className="row justify-content-between align-items-center margin-t-70">
-          <div className="col-12 col-md-5">
+          <div className="col-12 col-md-5 order-2 order-md-1">
             <img src={img3} className="col" />
           </div>
-          <div className="col-12 col-md-6 text-right">
+          <div className="col-12 col-md-6 text-right order-1 order-md-2">
             <h3>Follow our guide on how to compost effectively</h3>
             <p>
               Our expert biologists and enivornmentalists have created the
@@ -98,10 +98,10 @@ function Home() {
         </div>
 
         <div className="row justify-content-between align-items-center margin-t-70">
-          <div className="col-12 col-md-5">
+          <div className="col-12 col-md-5 order-2 order-md-1">
             <img src={img5} className="col" />
           </div>
-          <div className="col-12 col-md-6 text-right">
+          <div className="col-12 col-md-6 text-right order-1 order-md-2">
             <h3>
               Fill up your box, drop it off and get
               <span className="green"> paid</span>!
@@ -120,14 +120,14 @@ function Home() {
           </h2>
           <p>Well, there's two main reasons...</p>
         </div>
-        <div className="row justify-content-between margin-t-70">
-          <div className="col-12 col-md text-center benefit-box py-5 mr-2">
+        <div className="row justify-content-center margin-t-70">
+          <div className="col-11 col-md text-center benefit-box py-5 mr-2">
             <h3>
               You get <span className="green">money</span>...duh
             </h3>
             <p>Getting paid cash for doing minimal work? I’m in!</p>
           </div>
-          <div className="col-12 col-md text-center benefit-box py-5 ml-2">
+          <div className="col-11 col-md text-center benefit-box mt-3 mt-md-0 py-5 ml-md-2">
             <h3>
               You’re helping the <span className="green">environment</span>
             </h3>
@@ -137,7 +137,7 @@ function Home() {
       </div>
       <h2 className="text-center margin-t-120">Supported by</h2>
       <div className="row justify-content-center margin-t-70 margin-b-120">
-        <img src={cusec} className="col-2" />
+        <img src={cusec} className="col-md-2 col-6" />
       </div>
     </div>
   );

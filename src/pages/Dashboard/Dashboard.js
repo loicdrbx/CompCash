@@ -15,9 +15,9 @@ function Dashboard() {
   console.log(path);
   return (
     <div className="container dashboard mb-5">
-      <div className="row">
+      <div className="row justify-content-md-between justify-content-center">
         <DNav />
-        <div className="col ml-2">
+        <div className="col ml-2 mt-4 mt-md-0">
           <Switch>
             <Route exact path={path + '/'} component={DHome} />
             <Route exact path={path + '/boxes'} component={DNewBox} />
