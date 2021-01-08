@@ -94,3 +94,7 @@ span {
 .bold {
   font-weight: 600 !important;
 }
+
+.light {
+  font-weight: 400 !important;
+}
