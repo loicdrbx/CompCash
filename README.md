@@ -12,15 +12,17 @@ CompCash is currently deployed on Firebase and open for all to sign up and use.
 
 ---
 
-### Additional Info ###
+### Tech Stack ###
 
-1. [Authentication](https://firebase.google.com/docs/auth)
+1. [Firebase Authentication](https://firebase.google.com/docs/auth) for user authentication.
 
-2. [Firestore](https://firebase.google.com/docs/firestore)
+2. [Cloud Firestore](https://firebase.google.com/docs/firestore) to store data.
 
-3. [Cloud Functions for Firebase](https://firebase.google.com/docs/functions)
+3. [Cloud Functions for Firebase](https://firebase.google.com/docs/functions) as a web API.
 
-4. [Sendgrid](https://sendgrid.com/docs/api-reference/)
+4. [Sendgrid](https://sendgrid.com/docs/api-reference/) as an email service.
+   
+5. [Clarifai](https://docs.clarifai.com/api-guide/api-overview/) for computer vision and image recognition.
 
 ---
 
