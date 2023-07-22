@@ -2,7 +2,7 @@
 
 Earn passive income from your waste!
 
-Check out our prototype at [CompCash](https://project-compost.web.app/) 
+Check out our prototype at [https://project-compost.web.app](https://project-compost.web.app/) 
 
 ---
 
